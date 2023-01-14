@@ -1,0 +1,38 @@
+<!-- <app-reactiveforms></app-reactiveforms> -->
+<header
+  class="text-center py-2"
+  style="
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  "
+>
+  <h1>SESIÓN 13</h1>
+  <nav class="d-flex justify-content-center">
+    <ul class="nav nav-pills">
+      <li class="nav-item mx-4">
+        <button
+          class="nav-link"
+          [class.active]="selectedComponent === 1"
+          (click)="selectedComponent = 1"
+        >
+          Reto
+        </button>
+      </li>
+      <li class="nav-item mx-4">
+        <button
+          class="nav-link"
+          [class.active]="selectedComponent === 2"
+          (click)="selectedComponent = 2"
+        >
+          Asincrona
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+<section class="container my-2 p-4 border">
+  <app-formreto *ngIf="selectedComponent === 1"></app-formreto>
+  <app-asincrona *ngIf="selectedComponent === 2"></app-asincrona>
+</section>
